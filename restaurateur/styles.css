@@ -1,0 +1,237 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+body{
+    background-image: url(thousand-sunny.jpg)}
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 6rem;
+    .right{
+        display: flex;
+        .btn{
+            display: flex;
+            align-items: center;
+            button{
+                width: 8rem;
+                height: 4rem;
+                border-radius: 50px;
+            }
+        }
+    }
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.slider{
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+}
+
+.slider .list{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+}
+.slider .list .item{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 30s 5s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc( (30s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+}
+.slider .list .item img{
+    width: 100%;
+}
+@keyframes autoRun{
+    from{
+        left: 100%;
+    }to{
+        left: calc(var(--width) * -1);
+    }
+}
+.slider:hover .item{
+    animation-play-state: paused!important;
+    filter: grayscale(1);
+}
+.slider .item:hover{
+    filter: grayscale(0);
+}
+.entree{
+    white-space: pre-line;
+
+}
+thead{font-size: 70px;
+    background-color: rgb(95, 107, 117);
+    color: rgb(47, 107, 52);
+    text-shadow:
+        -1px -1px 0 white, 
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;;    
+}
+table{width: 100%;
+height: 50px;
+background-color: antiquewhite;
+font-size: 25px;}
+.image-carre {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0;
+}
+footer{
+display: flex;
+    background-color: rgb(170, 162, 162);
+    color:rgb(255, 255, 255);
+}
+.chois {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.chois h1 {
+    color: #bb0000;
+    margin-bottom: 10px;
+    text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+.chois select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 16px;
+}
+
+.chois input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chois input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+h1{
+    color: seashell;
+}
+.navbar {
+    background-color:#5F6B75;
+    padding: 10px; 
+    text-align: center;
+    font-size: 25px;
+
+}
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar li {
+    margin-right: 20px;
+    color: #2F6B34;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+    color: #4CAF50;
+}
+@media (max-width: 768px) {
+    header {
+        height: 4rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .right {
+        margin-top: 10px;
+    }
+    .btn button {
+        width: 6rem;
+        height: 3rem;
+    }
+    .slider {
+        height: 200px;
+    }
+    .slider .list .item {
+        height: 200px;
+    }
+    table {
+        font-size: 18px;
+    }
+    .image-carre {
+        width: 100px;
+        height: 100px;
+    }
+    .chois select {
+        width: 150px;
+        font-size: 14px;
+    }
+    .chois input[type="submit"] {
+        padding: 8px 15px;
+    }
+    .navbar {
+        padding: 5px;
+        font-size: 18px;
+    }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+    header {
+        height: 5rem;
+    }
+    .slider {
+        height: 250px;
+    }
+    .slider .list .item {
+        height: 250px;
+    }
+    table {
+        font-size: 20px;
+    }
+    .image-carre {
+        width: 120px;
+        height: 120px;
+    }
+    .chois select {
+        width: 180px;
+        font-size: 16px;
+    }
+    .chois input[type="submit"] {
+        padding: 9px 18px;
+    }
+    .navbar {
+        padding: 8px;
+        font-size: 20px;
+    }
+}
